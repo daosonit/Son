@@ -18,4 +18,3 @@
 <script src="{{asset('vendors/fastclick/fastclick.js')}}"></script>
 <script src="{{asset('asset/dist/js/app.min.js')}}"></script>
 <script src="{{asset('asset/dist/js/pages/dashboard.js')}}"></script>
-<script src="{{asset('asset/dist/js/demo.js')}}"></script>

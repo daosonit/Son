@@ -13,7 +13,6 @@
         "predis/predis": "^1.1",
         "components/backbone": "^1.2",
         "intervention/image": "^2.3",
-        "laravel/passport": "^1.0",
         "nesbot/carbon": "^1.21",
         "maatwebsite/excel": "^2.1"
     },

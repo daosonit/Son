@@ -13,9 +13,6 @@ use App\Http\Requests\AdminAuth\NavigateEditRequest;
 
 class NavigateController extends Controller
 {
-    /**
-     * Listing
-     */
     public function index(Request $request)
     {
         $name = $request->get('name', '');
@@ -36,21 +33,15 @@ class NavigateController extends Controller
         return view('admin.menu.listing')->with(array('listing' => $listing, 'name' => $name, 'type' => $type, 'no' => $no));
     }
 
-    /**
-     * Add
-     */
     public function create()
     {
         return view('admin.menu.insert');
     }
 
-    /**
-     * @param NavigateRequest $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function store(NavigateRequest $request)
     {
         try {
+
             $data = $request->all();
             Navigate::create($data);
 
@@ -60,9 +51,6 @@ class NavigateController extends Controller
         }
     }
 
-    /**
-     * Edit
-     */
     public function edit($id)
     {
         try {
@@ -91,9 +79,6 @@ class NavigateController extends Controller
         }
     }
 
-    /**
-     * Delete
-     */
     public function destroy($id)
     {
         try {

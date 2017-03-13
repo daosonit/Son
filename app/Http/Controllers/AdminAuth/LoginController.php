@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    public $redirectTo = '/admin/dashboard';
+    public $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -47,6 +47,9 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
+        if($this->guard()->check()){
+            return redirect()->route('admin.dashboard');
+        }
         return view('admin.login');
     }
 

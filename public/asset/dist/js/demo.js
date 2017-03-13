@@ -113,6 +113,7 @@
           + "</a>"
           + "<p class='text-center no-margin'>Blue</p>");
   skins_list.append(skin_blue);
+
   var skin_black =
       $("<li />", {style: "float:left; width: 33.33333%; padding: 5px;"})
           .append("<a href='javascript:void(0);' data-skin='skin-black' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'>"
@@ -121,6 +122,7 @@
           + "</a>"
           + "<p class='text-center no-margin'>Black</p>");
   skins_list.append(skin_black);
+
   var skin_purple =
       $("<li />", {style: "float:left; width: 33.33333%; padding: 5px;"})
           .append("<a href='javascript:void(0);' data-skin='skin-purple' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'>"
@@ -129,6 +131,7 @@
           + "</a>"
           + "<p class='text-center no-margin'>Purple</p>");
   skins_list.append(skin_purple);
+
   var skin_green =
       $("<li />", {style: "float:left; width: 33.33333%; padding: 5px;"})
           .append("<a href='javascript:void(0);' data-skin='skin-green' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'>"
@@ -137,6 +140,7 @@
           + "</a>"
           + "<p class='text-center no-margin'>Green</p>");
   skins_list.append(skin_green);
+
   var skin_red =
       $("<li />", {style: "float:left; width: 33.33333%; padding: 5px;"})
           .append("<a href='javascript:void(0);' data-skin='skin-red' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'>"
@@ -145,6 +149,7 @@
           + "</a>"
           + "<p class='text-center no-margin'>Red</p>");
   skins_list.append(skin_red);
+
   var skin_yellow =
       $("<li />", {style: "float:left; width: 33.33333%; padding: 5px;"})
           .append("<a href='javascript:void(0);' data-skin='skin-yellow' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'>"
@@ -179,6 +184,7 @@
           + "</a>"
           + "<p class='text-center no-margin' style='font-size: 12px'>Purple Light</p>");
   skins_list.append(skin_purple_light);
+
   var skin_green_light =
       $("<li />", {style: "float:left; width: 33.33333%; padding: 5px;"})
           .append("<a href='javascript:void(0);' data-skin='skin-green-light' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'>"
@@ -187,6 +193,7 @@
           + "</a>"
           + "<p class='text-center no-margin' style='font-size: 12px'>Green Light</p>");
   skins_list.append(skin_green_light);
+
   var skin_red_light =
       $("<li />", {style: "float:left; width: 33.33333%; padding: 5px;"})
           .append("<a href='javascript:void(0);' data-skin='skin-red-light' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'>"
@@ -195,6 +202,7 @@
           + "</a>"
           + "<p class='text-center no-margin' style='font-size: 12px'>Red Light</p>");
   skins_list.append(skin_red_light);
+
   var skin_yellow_light =
       $("<li />", {style: "float:left; width: 33.33333%; padding: 5px;"})
           .append("<a href='javascript:void(0);' data-skin='skin-yellow-light' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'>"

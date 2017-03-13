@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard'     => 'web',
+        'guard' => 'web',
         'passwords' => 'users',
     ],
 
@@ -37,25 +37,17 @@ return [
 
     'guards' => [
 
-        'employee' => [
-            'driver'   => 'session',
-            'provider' => 'employees',
-        ],
-        'customer'   => [
-            'driver'   => 'session',
-            'provider' => 'customers',
-        ],
-        'web'   => [
-            'driver'   => 'session',
+        'web' => [
+            'driver' => 'session',
             'provider' => 'users',
         ],
         'admin' => [
-            'driver'   => 'session',
+            'driver' => 'session',
             'provider' => 'admins',
         ],
 
         'api' => [
-            'driver'   => 'passport',
+            'driver' => 'passport',
             'provider' => 'users',
         ],
     ],
@@ -79,24 +71,14 @@ return [
 
     'providers' => [
 
-        'employees' => [
-            'driver' => 'eloquent',
-            'model'  => App\Models\Employee::class,
-        ],
-
-        'customers' => [
-            'driver' => 'eloquent',
-            'model'  => App\Models\Customer::class,
-        ],
-
         'users' => [
             'driver' => 'eloquent',
-            'model'  => App\Models\User::class,
+            'model' => App\Models\User::class,
         ],
 
         'admins' => [
             'driver' => 'eloquent',
-            'model'  => App\Models\Admin::class,
+            'model' => App\Models\Admin::class,
         ],
     ],
 
@@ -120,29 +102,16 @@ return [
     */
 
     'passwords' => [
-
-        'employees' => [
-            'provider' => 'employees',
-            'table'    => 'password_resets',
-            'expire'   => 60,
-        ],
-
-        'customers' => [
-            'provider' => 'customers',
-            'table'    => 'password_resets',
-            'expire'   => 60,
-        ],
-
         'users' => [
             'provider' => 'users',
-            'table'    => 'password_resets',
-            'expire'   => 60,
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
 
         'admins' => [
             'provider' => 'admins',
-            'table'    => 'password_resets',
-            'expire'   => 60,
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
     ],
 

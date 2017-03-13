@@ -24,10 +24,10 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'        => 'required|max:255',
-            'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'title'       => 'required|max:255',
-            'keyword'     => 'required|max:255',
+            'name' => 'required|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'title' => 'required|max:255',
+            'keyword' => 'required|max:255',
             'description' => 'required|max:255',
         ];
     }
@@ -40,9 +40,9 @@ class CategoryRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'        => 'Vui lòng nhập!',
-            'title.required'       => 'Vui lòng nhập!',
-            'keyword.required'     => 'Vui lòng nhập!',
+            'name.required' => 'Vui lòng nhập!',
+            'title.required' => 'Vui lòng nhập!',
+            'keyword.required' => 'Vui lòng nhập!',
             'description.required' => 'Vui lòng nhập!',
         ];
     }

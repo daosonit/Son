@@ -19,7 +19,6 @@
     @yield('content')
 
     @include('admin.layout.footer')
-    @include('admin.layout.control-sidebar')
 
     <div class="control-sidebar-bg"></div>
 </div>

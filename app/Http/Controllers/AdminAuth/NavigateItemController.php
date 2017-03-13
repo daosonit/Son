@@ -22,7 +22,6 @@ class NavigateItemController extends Controller
         return view('admin.menu-item.listing')->with(array('listing' => $listing, 'no' => $no));
     }
 
-    //Add
     public function create()
     {
         return view('admin.menu-item.insert');
@@ -44,7 +43,6 @@ class NavigateItemController extends Controller
         }
     }
 
-    //Edit
     public function edit($id)
     {
         try {
@@ -73,7 +71,6 @@ class NavigateItemController extends Controller
         }
     }
 
-    //Delete
     public function delete()
     {
 
@@ -83,7 +80,7 @@ class NavigateItemController extends Controller
     {
         try {
             $nav_item = NavigateItem::findOrFail($id);
-;
+
             if ($nav_item->delete()) {
                 return back()->with('status', 'Xóa thành công.');
             } else {

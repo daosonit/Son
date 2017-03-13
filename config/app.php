@@ -183,7 +183,6 @@ return [
         App\Providers\NavigateServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         App\Providers\FilemanagerServiceProvider::class,
-        Laravel\Passport\PassportServiceProvider::class,
     ],
 
     /*

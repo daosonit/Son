@@ -45,12 +45,19 @@
                                 <td>{{$no++}}</td>
 
                                 <td>
-                                    <a href="{{route($values->route)}}">
-                                    <strong>{{$values->getNavParent->name}}</strong>/{{$values->name}}
-                                    </a>
+                                    @if($values->nav_id >0)
+                                        @if(Route::has($values->route))
+                                            <a href="{{route($values->route)}}">
+                                                <strong>{{$values->getNavParent->name}}</strong>/{{$values->name}}
+                                            </a>
+                                        @else
+                                            <strong>{{$values->getNavParent->name}}</strong>/{{$values->name}}
+                                        @endif
+                                    @endif
                                 </td>
 
                                 <td style="text-align: center;">{{$values->order}}</td>
+
                                 <td style="text-align: center;">
                                     <a href="{{route('admin.menu-item.edit',array('menu'=>$values->id))}}">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>

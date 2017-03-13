@@ -39,39 +39,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapAdminRoutes();
 
-        $this->mapEmployeeRoutes();
-
-        $this->mapCustomerRoutes();
-
-        $this->mapApiRoutes();
-    }
-
-    /**
-     * Define the "customer" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapCustomerRoutes()
-    {
-        Route::group(['middleware' => ['web'], 'as' => 'customer.', 'namespace' => 'App\Http\Controllers\CustomerAuth',], function ($router) {
-            require base_path('routes/customer.php');
-        });
-    }
-
-    /**
-     * Define the "employee" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapEmployeeRoutes()
-    {
-        Route::group(['middleware' => ['web'], 'prefix' => 'user', 'as' => 'user.', 'namespace' => 'App\Http\Controllers\EmployeeAuth'], function ($router) {
-            require base_path('routes/employee.php');
-        });
+        //$this->mapApiRoutes();
     }
 
     /**
@@ -97,7 +65,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapUserRoutes()
     {
-        Route::group(['middleware' => 'web', 'namespace' => 'App\Http\Controllers','prefix' => 'user', 'as' => 'user.'], function ($router) {
+        Route::group(['middleware' => 'web', 'namespace' => 'App\Http\Controllers\Website', 'as' => 'site.'], function ($router) {
             require base_path('routes/user.php');
         });
     }

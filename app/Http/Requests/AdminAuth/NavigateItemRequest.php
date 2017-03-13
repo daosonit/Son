@@ -25,7 +25,7 @@ class NavigateItemRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'  => 'required|max:255',
+            'name' => 'required|max:255',
             'route' => 'required|max:255'
         ];
     }
@@ -38,7 +38,7 @@ class NavigateItemRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'  => 'Vui lòng nhập!',
+            'name.required' => 'Vui lòng nhập!',
             'route.required' => 'Vui lòng nhập!'
         ];
     }

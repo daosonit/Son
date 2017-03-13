@@ -13,8 +13,7 @@ class Navigate extends Model
     const NAV_TUTORIAL = 3; //tutorialspoint
     const NAV_ARTICLE = 4; //article
 
-
-    protected $fillable   = ['name', 'type', 'order'];
+    protected $fillable   = ['name', 'type'];
     public    $timestamps = false;
 
     public function getNavItem()

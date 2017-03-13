@@ -28,39 +28,38 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                            <th>Rendering engine</th>
-                            <th>Browser</th>
-                            <th>Platform(s)</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
+                            <th style="text-align: center;" width="4%">STT</th>
+                            <th width="30%">Tên danh mục</th>
+                            <th>Mô tả</th>
+                            <th style="text-align: center;" width="4%">Sửa</th>
+                            <th style="text-align: center;" width="4%">Xóa</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Misc</td>
-                            <td>PSP browser</td>
-                            <td>PSP</td>
-                            <td>-</td>
-                            <td>C</td>
-                        </tr>
-                        <tr>
-                            <td>Other browsers</td>
-                            <td>All others</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>U</td>
-                        </tr>
+                        @foreach($listing as $key => $values)
+                            <tr>
+                                <td>{{$no++}}</td>
+                                <td>{{$values->name}}</td>
+                                <td>{{$values->description}}</td>
+                                <td style="text-align: center;">
+                                    <a href="">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+                                <td style="text-align: center;">
+                                    <a data-toggle="modal" href="#menu_{{$values->id}}">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>
+                                    @include('admin.layout.modal')
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
-                        <tfoot>
-                        <tr>
-                            <th>Rendering engine</th>
-                            <th>Browser</th>
-                            <th>Platform(s)</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
-                        </tr>
-                        </tfoot>
                     </table>
+
+                    @if($listing->lastPage() >1)
+                        {!! $listing->links('vendor.pagination.default') !!}
+                    @endif
                 </div>
 
             </div>
