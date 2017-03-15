@@ -21,7 +21,7 @@ Route::group(array('middleware' => 'admin'), function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
     Route::resource('/menu', 'NavigateController');
     Route::resource('/menu-item', 'NavigateItemController');
-    Route::resource('/customer', 'CategoryController');
+    Route::resource('/customer', 'CustomerController');
     Route::resource('/category', 'CategoryController');
     Route::resource('/post', 'PostController');
     Route::resource('/product', 'ProductController');
