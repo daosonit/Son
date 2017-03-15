@@ -85,9 +85,9 @@ class NavigateController extends Controller
             $navigate = Navigate::findOrFail($id);
 
             if ($navigate->delete()) {
-                return back()->with('status', 'Delete success!');
+                return back()->with('status', 'Xóa thành công!');
             } else {
-                return back()->with('status', 'Delete thất bại!');
+                return back()->with('status', 'Xóa thất bại!');
             }
 
         } catch (ModelNotFoundException $e) {

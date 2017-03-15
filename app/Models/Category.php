@@ -11,5 +11,5 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'image', 'title', 'keyword', 'description'];
+    protected $fillable = ['name', 'type', 'title', 'keyword', 'description'];
 }

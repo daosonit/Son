@@ -10,19 +10,19 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Dashboard
-                <small>Control panel</small>
+                <a href="{{route('admin.category.create')}}">Thêm mới</a>
+                <small>Danh sách danh mục</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li><a href="/"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+                <li class="active">Danh sách</li>
             </ol>
         </section>
 
         <section class="content">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Data Table With Full Features</h3>
+                    <h3 class="box-title">Danh sách danh mục</h3>
                 </div>
                 <div class="box-body">
                     <table id="example1" class="table table-bordered table-striped">
@@ -42,15 +42,15 @@
                                 <td>{{$values->name}}</td>
                                 <td>{{$values->description}}</td>
                                 <td style="text-align: center;">
-                                    <a href="">
+                                    <a href="{{route('admin.category.edit',array('category'=>$values->id))}}">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     </a>
                                 </td>
                                 <td style="text-align: center;">
-                                    <a data-toggle="modal" href="#menu_{{$values->id}}">
+                                    <a data-toggle="modal" href="#category_{{$values->id}}">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                     </a>
-                                    @include('admin.layout.modal')
+                                    @include('admin.layout.modal',array('href'=>'category_'.$values->id,'url'=>route('admin.category.destroy',$values->id),))
                                 </td>
                             </tr>
                         @endforeach
@@ -58,7 +58,7 @@
                     </table>
 
                     @if($listing->lastPage() >1)
-                        {!! $listing->links('vendor.pagination.default') !!}
+                        {!! $listing->links('pagination.default') !!}
                     @endif
                 </div>
 

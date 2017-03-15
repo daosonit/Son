@@ -76,7 +76,7 @@
                                     <a data-toggle="modal" href="#menu_{{$values->id}}">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                     </a>
-                                    @include('admin.layout.modal',array('href'=>'menu_'.$values->id,'url'=>route('admin.menu.destroy',$values->id),))
+                                    @include('admin.layout.modal',array('href'=>'menu_'.$values->id,'url'=>route('admin.menu.destroy',$values->id)))
                                 </td>
                             </tr>
                         @empty
@@ -84,7 +84,7 @@
                         </tbody>
                     </table>
                     @if($listing->lastPage() >1)
-                        {!! $listing->links('vendor.pagination.default') !!}
+                        {!! $listing->links('pagination.default') !!}
                     @endif
                 </div>
 

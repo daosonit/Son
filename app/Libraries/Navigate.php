@@ -12,11 +12,8 @@ class Navigate
     public function getNavigate()
     {
         return array(-1 => 'Chọn hệ thống',
-                     Nav::NAV_ADMIN     => 'Nav Admin',
-                     Nav::NAV_EMPLOYEE => 'Nav Employee',
-                     Nav::NAV_CUSTOMER => 'Nav Customer',
-                     Nav:: NAV_TUTORIAL => 'Tutorial',
-                     Nav::NAV_ARTICLE => 'Article');
+            Nav::NAV_ADMIN => 'Hệ thống admin',
+            Nav::NAV_WEBSITE => 'Hệ thống website');
     }
 
     /**
@@ -47,22 +44,6 @@ class Navigate
     public function getNavAdmin()
     {
         return Nav::where('type', Nav::NAV_ADMIN)->orderBy('order', 'ASC')->get();
-    }
-
-    /**
-     * Danh sách navigation customer
-     */
-    public function getNavCustomer()
-    {
-        return Nav::where('type', Nav::NAV_CUSTOMER)->orderBy('order', 'ASC')->get();
-    }
-
-    /**
-     * Danh sách navigation customer
-     */
-    public function getNavUser()
-    {
-        return Nav::where('type', Nav::NAV_EMPLOYEE)->orderBy('order', 'ASC')->get();
     }
 
     /**

@@ -183,6 +183,7 @@ return [
         App\Providers\NavigateServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         App\Providers\FilemanagerServiceProvider::class,
+        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
     ],
 
     /*

@@ -1,23 +1,24 @@
 <div class="slider-inner">
     <div id="da-slider" class="da-slider">
         <div class="da-slide">
-            <h2><i>CLEAN &amp; FRESH</i> <br/> <i>FULLY RESPONSIVE</i> <br/> <i>DESIGN</i></h2>
+            <h2><i>CỨU NG</i> <br/> <i>CHUYỆN TH</i> <br/> <i>KHAU TRANG 01</i></h2>
             <p><i>Lorem ipsum dolor amet</i> <br/> <i>tempor incididunt ut</i> <br/> <i>veniam omnis </i></p>
-            <div class="da-img"><img class="img-responsive" src="website/plugins/parallax-slider/img/1.png" alt="">
+            <div class="da-img">
+                <iframe width="500" height="300" src="https://www.youtube.com/embed/j1CG8RaB4Fo" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="da-slide">
-            <h2><i>RESPONSIVE VIDEO</i> <br/> <i>SUPPORT AND</i> <br/> <i>MANY MORE</i></h2>
+            <h2><i>KHẨU TRANG HOẠT T</i> <br/> <i>KHỬ MÙI 4 L</i> <br/> <i>KHAU TRANG 02</i></h2>
             <p><i>Lorem ipsum dolor amet</i> <br/> <i>tempor incididunt ut</i></p>
             <div class="da-img">
-                <iframe src="http://player.vimeo.com/video/47911018" width="530" height="300" frameborder="0"
-                        webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                <iframe width="500" height="300" src="https://www.youtube.com/embed/XXhYb3TzgZw" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="da-slide">
-            <h2><i>USING BEST WEB</i> <br/> <i>SOLUTIONS WITH</i> <br/> <i>HTML5/CSS3</i></h2>
+            <h2><i>VIET GI DO VAO DAY</i> <br/> <i>QUANG CAO</i> <br/> <i>SẢN PHẨM</i></h2>
             <p><i>Lorem ipsum dolor amet</i> <br/> <i>tempor incididunt ut</i> <br/> <i>veniam omnis </i></p>
-            <div class="da-img"><img src="website/plugins/parallax-slider/img/html5andcss3.png" alt="image01"/>
+            <div class="da-img">
+                <iframe width="500" height="300" src="https://www.youtube.com/embed/XXhYb3TzgZw" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="da-arrows">

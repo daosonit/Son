@@ -34,7 +34,7 @@
                     <div class="row">
                         <div class="col-md-6">
 
-                            {!! Form::open(['route' => 'admin.menu-item.store']) !!}
+                            {!! Form::open(['route' => 'admin.category.store']) !!}
                             <div class="form-group">
                                 {!! Form::label('name', 'Navigate Item') !!}
                                 {!! Form::text('name','',array('class'=>'form-control','placeholder' => 'Tên navigate')) !!}

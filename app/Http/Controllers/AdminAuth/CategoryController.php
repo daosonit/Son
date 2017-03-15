@@ -7,28 +7,19 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminAuth\CategoryRequest;
+use App\Http\Requests\AdminAuth\CategoryUpdateRequest;
 use App\Libraries\Image\UploadImage;
 use Config;
 
 class CategoryController extends Controller
 {
+    const CAT_NEWS = 1;
+    const CAT_PRODUCT = 2;
 
-    public function index(Request $request)
+    public function index()
     {
-        /* $name = $request->get('name', '');
-         $type = $request->get('type', -1);*/
-
         $query = Category::select('*');
-
-        /* if ($name != '') {
-             $query->findName($name);
-         }
-
-         if ($type > -1) {
-             $query->findType($type);
-         }*/
-
-        $listing = $query->orderBy('order', 'ASC')->paginate(10);
+        $listing = $query->paginate(10);
         $no = $listing->firstItem();
         return view('admin.category.listing')->with(['listing' => $listing, 'no' => $no]);
     }
@@ -43,16 +34,6 @@ class CategoryController extends Controller
         try {
 
             $data = $request->all();
-            if ($request->hasFile('image')) {
-                $upload_image = new UploadImage();
-                $upload_image->make($this->option())->save($request->file('image'));
-
-                if (count($upload_image->error()) == 0) {
-                    $data['image'] = $upload_image->fileName();
-                }
-            } else {
-                $data['image'] = '';
-            }
 
             $result = Category::create($data);
 
@@ -61,38 +42,43 @@ class CategoryController extends Controller
             }
 
         } catch (ModelNotFoundException $e) {
-
+            abort(404);
         }
     }
 
-    /**
-     * Kích thước hình ảnh
-     */
-    private function option()
-    {
-        return array('prefix_size' => Config::get('upload_image.sizeCategory'),
-            'first_name' => Config::get('upload_image.nameCategory'),
-            'path' => Config::get('upload_image.pathCategory'));
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-
     public function edit($id)
     {
-        //
+        try {
+            $category = Category::findOrFail($id);
+            return view('admin.category.update')->with(array('category' => $category));
+        } catch (ModelNotFoundException $e) {
+            abort(404);
+        }
     }
 
-    public function update(Request $request, $id)
+    public function update(CategoryUpdateRequest $request, $id)
     {
-        //
+        try {
+            $category = Category::findOrFail($id);
+            $category->name = $request->name;
+            $category->type = $request->type;
+            $category->title = $request->title;
+            $category->keyword = $request->keyword;
+            $category->description = $request->description;
+
+            if ($category->save()) {
+                return back()->with('status', 'Update thành công.');
+            } else {
+                return back()->with('status', 'Update thất bại.');
+            }
+
+        } catch (ModelNotFoundException $e) {
+            abort(404);
+        }
     }
 
     public function destroy($id)
     {
-        //
+
     }
 }

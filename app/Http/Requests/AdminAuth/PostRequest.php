@@ -4,7 +4,7 @@ namespace App\Http\Requests\AdminAuth;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryRequest extends FormRequest
+class PostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,11 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255'
+            'name' => 'required|max:255',
+            'title' => 'required|max:255',
+            'keyword' => 'required|max:255',
+            'description' => 'required|max:255',
+            'content' => 'required'
         ];
     }
 
@@ -36,7 +40,11 @@ class CategoryRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Vui lòng nhập!'
+            'name.required' => 'Vui lòng nhập tên bài viết!',
+            'title.required' => 'Vui lòng nhập title!',
+            'keyword.required' => 'Vui lòng nhập keyword!',
+            'description.required' => 'Vui lòng nhập description!',
+            'content.required' => 'Vui lòng nhập nội dung bài viết!',
         ];
     }
 }

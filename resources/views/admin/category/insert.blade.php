@@ -9,11 +9,12 @@
 
         <section class="content-header">
             <h1>
-                Dashboard <small>Control panel</small>
+                <a href="{{route('admin.category.index')}}">Danh sách danh mục</a>
+                <small>Thêm mới danh mục</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="javascript:void(0)"><i class="fa fa-dashboard"></i>Home</a></li>
-                <li class="active">Thêm mới</li>
+                <li><a href="/"><i class="fa fa-dashboard"></i>Trang chủ</a></li>
+                <li class="active">Thêm mới danh mục</li>
             </ol>
         </section>
 
@@ -21,7 +22,7 @@
 
             <div class="box box-default">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Category</h3>
+                    <h3 class="box-title">Thêm mới danh mục</h3>
                 </div>
                 <div class="box-body">
                     @if (session('status'))
@@ -35,20 +36,16 @@
                         <div class="col-md-6">
                             {!! Form::open(['route' => 'admin.category.store','files' => true]) !!}
                             <div class="form-group {{($errors->has('name'))?'has-error':''}}">
-                                {!! Form::label('name', 'Name') !!}
+                                {!! Form::label('name', 'Tên danh mục') !!}
                                 {!! Form::text('name','',array('class'=>'form-control','placeholder' => 'Tên navigate')) !!}
                                 @if ($errors->has('name'))
                                     <div class="text-danger">{!! $errors->first('name') !!}</div>
                                 @endif
                             </div>
 
-                            <div class="form-group {{($errors->has('image'))?'has-error':''}}">
-                                {!!  Form::label('image', 'Ảnh đại diện') !!}
-
-                                {!! Form::file('image',array('class'=>'form-control')) !!}
-                                @if($errors->has('image'))
-                                    <div class="text-danger">{!! $errors->first('description') !!}</div>
-                                @endif
+                            <div class="form-group">
+                                {!! Form::label('type', 'Kiểu danh mục') !!}
+                                {!! Form::select('type', array(1=>'Hệ thống website'),1, array('class'=>'form-control')) !!}
                             </div>
 
                             <div class="form-group {{($errors->has('title'))?'has-error':''}}">
@@ -69,7 +66,7 @@
 
                             <div class="form-group {{($errors->has('description'))?'has-error':''}}">
                                 {!! Form::label('description', 'Meta description') !!}
-                                {!! Form::text('description','',array('class'=>'form-control','placeholder' => 'Meta description')) !!}
+                                {!! Form::textarea('description','',array('class'=>'form-control','placeholder' => 'Meta description')) !!}
                                 @if ($errors->has('description'))
                                     <div class="text-danger">{!! $errors->first('description') !!}</div>
                                 @endif

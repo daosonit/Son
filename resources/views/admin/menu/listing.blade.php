@@ -84,7 +84,7 @@
                         </tbody>
                     </table>
                     @if($listing->lastPage() >1)
-                        {!! $listing->links('vendor.pagination.default') !!}
+                        {!! $listing->links('pagination.default') !!}
                     @endif
                 </div>
 

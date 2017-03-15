@@ -7,11 +7,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Navigate extends Model
 {
-    const NAV_ADMIN = 0; //navigation Admin
-    const NAV_EMPLOYEE = 1; //navigation Employee
-    const NAV_CUSTOMER = 2; //navigation Customer
-    const NAV_TUTORIAL = 3; //tutorialspoint
-    const NAV_ARTICLE = 4; //article
+    const NAV_ADMIN = 0; //Hệ thống admin
+    const NAV_WEBSITE = 1; //Hệ thống website
+
 
     protected $fillable   = ['name', 'type'];
     public    $timestamps = false;
