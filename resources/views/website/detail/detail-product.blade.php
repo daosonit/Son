@@ -40,18 +40,19 @@
     <link rel="stylesheet" href="{{asset('/website/css/custom.css')}}">
 @endsection
 @section('content')
-    <!--=== Breadcrumbs ===-->
+
     <div class="breadcrumbs">
         <div class="container">
-            <h1 class="pull-left">Portfolio Item 1</h1>
+            <h1 class="pull-left">{{$product->name}}</h1>
+
             <ul class="pull-right breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li><a href="">Portfolio</a></li>
-                <li class="active">Portfolio Item 1</li>
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="{{route('site.listing-product')}}">Danh sách sản phẩm</a></li>
+                <li class="active">{{$product->name}}</li>
             </ul>
         </div><!--/container-->
     </div><!--/breadcrumbs-->
-    <!--=== End Breadcrumbs ===-->
+
 
     <!--=== Content Part ===-->
     <div class="container content">
@@ -60,20 +61,23 @@
             <div class="col-md-7">
                 <div class="carousel slide carousel-v1" id="myCarousel">
                     <div class="carousel-inner">
+
                         <div class="item active">
-                            <img alt="" src="website/img/main/img11.jpg">
+                            <img alt="" src="{{asset('website/img/main/img11.jpg')}}">
                             <div class="carousel-caption">
                                 <p>Facilisis odio, dapibus ac justo acilisis gestinas.</p>
                             </div>
                         </div>
+
                         <div class="item">
-                            <img alt="" src="website/img/main/img12.jpg">
+                            <img alt="" src="{{asset('website/img/main/img11.jpg')}}">
                             <div class="carousel-caption">
                                 <p>Cras justo odio, dapibus ac facilisis into egestas.</p>
                             </div>
                         </div>
+
                         <div class="item">
-                            <img alt="" src="website/img/main/img13.jpg">
+                            <img alt="" src="{{asset('website/img/main/img11.jpg')}}">
                             <div class="carousel-caption">
                                 <p>Justo cras odio apibus ac afilisis lingestas de.</p>
                             </div>
@@ -92,16 +96,11 @@
             </div>
 
             <div class="col-md-5">
-                <h2>Portfolio Item Information</h2>
-                <p>At vero eos et accusamus et iusto odio dignissimos <a href="#">ducimus qui blanditiis</a> praesentium
-                    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                    cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est
-                    laborum et dolorum fuga. Et harum quidem rerum Fusce condimentum eleifend enim a feugiat.
-                    Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Ut non libero magna. Sed et quam lacus.</p>
-                <p>Molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
-                    deserunt mollitia animi, id est laborum et dolorum fuga. Ut non libero consectetur adipiscing elit
-                    magna. Sed et quam lacus.</p>
+                <h2>{{$product->name}}</h2>
+                <p>
+                    {{$product->detail}}
+                </p>
+
                 <ul class="list-unstyled">
                     <li><i class="fa fa-user color-green"></i> Jack Baur</li>
                     <li><i class="fa fa-calendar color-green"></i> 14,2003 February</li>
@@ -113,15 +112,15 @@
         </div><!--/row-->
 
         <div class="tag-box tag-box-v2">
-            <p>Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet consectetur
-                adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus. Fusce condimentum
-                eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.</p>
+            {{$product->detail}}sản phẩm được bán với giá
         </div>
 
         <div class="margin-bottom-20 clearfix"></div>
 
         <div class="owl-carousel-v1 owl-work-v1 margin-bottom-40">
-            <div class="headline"><h2 class="pull-left">Recent Works</h2>
+            <div class="headline">
+                <h2 class="pull-left">Sản phẩm bán chạy</h2>
+
                 <div class="owl-navigation">
                     <div class="customNavigation">
                         <a class="owl-btn prev-v2"><i class="fa fa-angle-left"></i></a>
@@ -131,10 +130,11 @@
             </div>
 
             <div class="owl-recent-works-v1">
+                @for($i =0; $i<10; $i++)
                 <div class="item">
                     <a href="#">
                         <em class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img1.jpg" alt="">
+                            <img class="img-responsive" src="{{asset('website/img/main/img1.jpg')}}" alt="">
                         </em>
                         <span>
                             <strong>Happy New Year</strong>
@@ -142,105 +142,7 @@
                         </span>
                     </a>
                 </div>
-                <div class="item">
-                    <a href="#">
-                        <em class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img2.jpg" alt="">
-                        </em>
-                        <span>
-                            <strong>Award Winning Agency</strong>
-                            <i>Responsive Bootstrap Template</i>
-                        </span>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <em class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img3.jpg" alt="">
-                        </em>
-                        <span>
-                            <strong>Wolf Moon Officia</strong>
-                            <i>Pariatur prehe cliche reprehrit</i>
-                        </span>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <em class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img4.jpg" alt="">
-                        </em>
-                        <span>
-                            <strong>Food Truck Quinoa Nesciunt</strong>
-                            <i>Craft labore wes anderson cred</i>
-                        </span>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <em class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img5.jpg" alt="">
-                        </em>
-                        <span>
-                            <strong>Happy New Year</strong>
-                            <i>Anim pariatur cliche reprehenderit</i>
-                        </span>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <em class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img1.jpg" alt="">
-                        </em>
-                        <span>
-                            <strong>Happy New Year</strong>
-                            <i>Anim pariatur cliche reprehenderit</i>
-                        </span>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <em class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img2.jpg" alt="">
-                        </em>
-                        <span>
-                            <strong>Award Winning Agency</strong>
-                            <i>Responsive Bootstrap Template</i>
-                        </span>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <em class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img3.jpg" alt="">
-                        </em>
-                        <span>
-                            <strong>Wolf Moon Officia</strong>
-                            <i>Pariatur prehe cliche reprehrit</i>
-                        </span>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <em class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img4.jpg" alt="">
-                        </em>
-                        <span>
-                            <strong>Food Truck Quinoa Nesciunt</strong>
-                            <i>Craft labore wes anderson cred</i>
-                        </span>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <em class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img5.jpg" alt="">
-                        </em>
-                        <span>
-                            <strong>Happy New Year</strong>
-                            <i>Anim pariatur cliche reprehenderit</i>
-                        </span>
-                    </a>
-                </div>
+                @endfor
             </div>
         </div>
 

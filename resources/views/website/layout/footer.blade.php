@@ -4,8 +4,9 @@
             <div class="row">
                 <!-- About -->
                 <div class="col-md-3 md-margin-bottom-40">
-                    <a href="index.html"><img id="logo-footer" class="footer-logo"
-                                              src="website/img/logo1-default.png" alt=""></a>
+                    <a href="index.html">
+                        <img id="logo-footer" class="footer-logo" src="{{asset('website/img/logo1-default.png')}}" alt="">
+                    </a>
                     <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero
                         tincidunt sodales.</p>
                     <p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat
@@ -70,7 +71,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <p>
-                        2016 &copy; All Rights Reserved.
+                        2017 &copy; All Rights Reserved.
                         <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
                     </p>
                 </div>

@@ -1,7 +1,7 @@
 <div class="header">
     <div class="container">
         <a class="logo" href="/">
-            <img src="website/img/logo1-default.png" alt="Logo">
+            <img src="{{asset("/website/img/logo1-default.png")}}" alt="Logo">
         </a>
         <button type="button" class="navbar-toggle" data-toggle="collapse"
                 data-target=".navbar-responsive-collapse">
@@ -14,27 +14,30 @@
         <div class="container">
             <ul class="nav navbar-nav">
 
-                <li class="active"><a href="#"><span> Trang chủ</span></a></li>
+                <li class="active"><a href="/"><span> Trang chủ</span></a></li>
 
-                <li><a href=""> Giới thiệu </a></li>
+                <li><a href="{{route('site.listing-product')}}"> Giới thiệu </a></li>
 
                 <li class="dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="{{route('site.listing-product')}}" class="dropdown-toggle" data-toggle="dropdown">
                         Sản phẩm
                     </a>
+                    <?php
+                    $products = \App\Models\Product::select('id', 'name')->where('promotion', '=', '1')->orderBy('id', 'DESC')->get()
+                    ?>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-submenu">
-                            <a href="">Blog Large Image</a>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a href="">Blog Medium Image</a>
-                        </li>
+                        @foreach($products as $key => $product)
+                            <li>
+                                <a href="{{route('site.detail-product',array('id'=>$product->id,'name'=>str_slug($product->name)))}}">
+                                    {{$product->name}}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </li>
 
-                <li><a href=""> Tin tức </a></li>
-                <li><a href=""> Tuyển dụng </a></li>
-                <li><a href=""> Liện hệ </a></li>
+                <li><a href="{{route('site.listing-post')}}"> Tin tức </a></li>
+                <li><a href="{{route('site.contact')}}"> Liện hệ </a></li>
 
                 <li>
                     <i class="search fa fa-search search-btn"></i>

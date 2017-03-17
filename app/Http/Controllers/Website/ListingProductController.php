@@ -10,7 +10,7 @@ class ListingProductController extends Controller
 {
     public function showListing()
     {
-        $listing = Product::orderBy('id', 'ASC')->paginate(10);
+        $listing = Product::orderBy('id', 'DESC')->paginate(10);
 
         return view('website.listing.listing-product')->with(array('listing' => $listing));
     }

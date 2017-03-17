@@ -76,20 +76,18 @@
                         </div>
                         <div class="col-sm-7 news-v3">
                             <div class="news-v3-in-sm no-padding">
-                                <h2><a href="#">{{$product->name}}</a></h2>
-                                <p>{{$product->detail}}</p>
+                                <h2>
+                                    <a href="{{route('site.detail-product',array('id'=>$product->id,'name'=>str_slug($product->name)))}}">{{$product->name}}</a>
+                                </h2>
+                                <p>{{$product->description}}</p>
                                 <ul class="list-inline posted-info">
-                                    <li>Chi tiết xin liện hệ</li>
-                                    <li>Nguyễn Văn A</li>
-                                    <li>SDT: 0123456789</li>
+                                    <li>Chi tiết xin liện hệ Nguyễn Văn A SDT: 0123456789</li>
                                 </ul>
 
                                 <ul class="post-shares">
-                                    <li>
-                                        <a href="#"> <i class="rounded-x icon-speech"></i> <span>5</span> </a>
-                                    </li>
-                                    <li><a href="#"><i class="rounded-x icon-share"></i></a></li>
-                                    <li><a href="#"><i class="rounded-x icon-heart"></i></a></li>
+                                    <li><i class="rounded-x icon-speech"></i></li>
+                                    <li><i class="rounded-x icon-share"></i></li>
+                                    <li><i class="rounded-x icon-heart"></i></li>
                                 </ul>
                             </div>
                         </div>
@@ -112,62 +110,7 @@
             </div>
             <!-- End Blog All Posts -->
 
-            <!-- Blog Sidebar -->
-            <div class="col-md-3">
-                <div class="headline-v2 bg-color-light"><h2>Tin tức mới nhất</h2></div>
-                <!-- Trending -->
-                <ul class="list-unstyled blog-trending margin-bottom-50">
-                    <li>
-                        <h3><a href="#">Proin dapibus ornare magna.</a></h3>
-                        <small>19 Jan, 2015 / <a href="#">Hi-Tech,</a> <a href="#">Technology</a></small>
-                    </li>
-                    <li>
-                        <h3><a href="#">Fusce at diam ante.</a></h3>
-                        <small>17 Jan, 2015 / <a href="#">Artificial Intelligence</a></small>
-                    </li>
-                    <li>
-                        <h3><a href="#">Donec quis consequat magna...</a></h3>
-                        <small>5 Jan, 2015 / <a href="#">Web,</a> <a href="#">Webdesign</a></small>
-                    </li>
-                </ul>
-
-                <!-- End Trending -->
-                <div class="headline-v2 bg-color-light"><h2>Sản phẩm khuyến mại</h2></div>
-                <!-- Latest Links -->
-                <ul class="list-unstyled blog-latest-posts margin-bottom-50">
-                    <li>
-                        <h3><a href="#">The point of using Lorem Ipsum</a></h3>
-                        <small>19 Jan, 2015 / <a href="#">Hi-Tech,</a> <a href="#">Technology</a></small>
-                        <p>Phasellus ullamcorper pellentesque ex. Cras venenatis elit orci, vitae dictum elit egestas a.
-                            Nunc nec auctor mauris, semper scelerisque nibh.</p>
-                    </li>
-                    <li>
-                        <h3><a href="#">Many desktop publishing packages...</a></h3>
-                        <small>23 Jan, 2015 / <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
-                        <p>Integer vehicula sed justo ac dapibus. In sodales nunc non varius accumsan.</p>
-                    </li>
-                </ul>
-                <!-- End Latest Links -->
-
-                <div class="headline-v2 bg-color-light"><h2>Sản phẩm bán chạy</h2></div>
-                <!-- Latest Links -->
-                <ul class="list-unstyled blog-latest-posts margin-bottom-50">
-                    <li>
-                        <h3><a href="#">The point of using Lorem Ipsum</a></h3>
-                        <small>19 Jan, 2015 / <a href="#">Hi-Tech,</a> <a href="#">Technology</a></small>
-                        <p>Phasellus ullamcorper pellentesque ex. Cras venenatis elit orci, vitae dictum elit egestas a.
-                            Nunc nec auctor mauris, semper scelerisque nibh.</p>
-                    </li>
-                    <li>
-                        <h3><a href="#">Many desktop publishing packages...</a></h3>
-                        <small>23 Jan, 2015 / <a href="#">Art,</a> <a href="#">Lifestyles</a></small>
-                        <p>Integer vehicula sed justo ac dapibus. In sodales nunc non varius accumsan.</p>
-                    </li>
-                </ul>
-                <!-- End Latest Links -->
-
-            </div>
-            <!-- End Blog Sidebar -->
+            @include('website.layout.left-bar')
         </div>
     </div>
     <!--=== End Blog Posts ===-->

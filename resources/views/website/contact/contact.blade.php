@@ -59,15 +59,15 @@
     <link rel="stylesheet" href="{{asset('/website/css/custom.css')}}">
 
 @endsection
+
 @section('content')
 
     <div class="breadcrumbs">
         <div class="container">
-            <h1 class="pull-left">Our Contacts</h1>
+            <h1 class="pull-left">Liên hệ</h1>
             <ul class="pull-right breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="">Pages</a></li>
-                <li class="active">Contacts</li>
+                <li><a href="/">Trang chủ</a></li>
+                <li class="active">Liên hệ</li>
             </ul>
         </div>
     </div>
@@ -124,63 +124,9 @@
                     </div>
                 </form>
             </div>
-
-            <div class="col-md-3">
-
-                <div class="headline"><h2>Contacts</h2></div>
-                <ul class="list-unstyled who margin-bottom-30">
-                    <li><a href="#"><i class="fa fa-home"></i>5B Streat, City 50987 New Town US</a></li>
-                    <li><a href="#"><i class="fa fa-envelope"></i>info@example.com</a></li>
-                    <li><a href="#"><i class="fa fa-phone"></i>1(222) 5x86 x97x</a></li>
-                    <li><a href="#"><i class="fa fa-globe"></i>http://www.example.com</a></li>
-                </ul>
-
-                <div class="headline"><h2>Business Hours</h2></div>
-                <ul class="list-unstyled margin-bottom-30">
-                    <li><strong>Monday-Friday:</strong> 10am to 8pm</li>
-                    <li><strong>Saturday:</strong> 11am to 3pm</li>
-                    <li><strong>Sunday:</strong> Closed</li>
-                </ul>
-
-                <div class="headline"><h2>Why we are?</h2></div>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-check color-green"></i> Odio dignissimos ducimus</li>
-                    <li><i class="fa fa-check color-green"></i> Blanditiis praesentium volup</li>
-                    <li><i class="fa fa-check color-green"></i> Eos et accusamus</li>
-                </ul>
-            </div>
+            @include('website.layout.left-bar')
         </div>
-        <div class="headline"><h2>Our Clients</h2></div>
-        <div class="owl-clients-v1">
-            <div class="item">
-                <img src="website/img/clients4/1.png" alt="">
-            </div>
-            <div class="item">
-                <img src="website/img/clients4/2.png" alt="">
-            </div>
-            <div class="item">
-                <img src="website/img/clients4/3.png" alt="">
-            </div>
-            <div class="item">
-                <img src="website/img/clients4/4.png" alt="">
-            </div>
-            <div class="item">
-                <img src="website/img/clients4/5.png" alt="">
-            </div>
-            <div class="item">
-                <img src="website/img/clients4/6.png" alt="">
-            </div>
-            <div class="item">
-                <img src="website/img/clients4/7.png" alt="">
-            </div>
-            <div class="item">
-                <img src="website/img/clients4/8.png" alt="">
-            </div>
-            <div class="item">
-                <img src="website/img/clients4/9.png" alt="">
-            </div>
-        </div>
+        @include('website.layout.owl-clients')
     </div>
 
 @endsection

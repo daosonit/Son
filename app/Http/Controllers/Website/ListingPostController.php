@@ -10,7 +10,7 @@ class ListingPostController extends Controller
 {
     public function showListing()
     {
-        $listing = Post::orderBy('id', 'ASC')->paginate(1);
+        $listing = Post::orderBy('id', 'DESC')->paginate(10);
 
         return view('website.listing.listing-post')->with(array('listing' => $listing));
     }
