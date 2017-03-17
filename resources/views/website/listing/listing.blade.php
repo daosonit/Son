@@ -48,7 +48,7 @@
         <div class="row">
             <!-- Blog All Posts -->
             <div class="col-md-9">
-            @for($i=0;$i<10;$i++)
+            @forelse($listing as $keys => $product)
                 <!-- News v3 -->
                     <div class="row margin-bottom-20">
                         <div class="col-sm-5 sm-margin-bottom-20">
@@ -76,22 +76,17 @@
                         </div>
                         <div class="col-sm-7 news-v3">
                             <div class="news-v3-in-sm no-padding">
-                                <h2><a href="#">Khẩu trang 4 lớp hoạt tính</a></h2>
-                                <p>Đặc tính sản phẩm:
-                                    Khẩu trang AsiaMask bảo vệ sức khỏe, chống không khí ô nhiễm, ứng dụng công nghệ nước ngoài với nguyên liệu hoàn toàn ngoại nhập.
-                                    Khẩu trang gồm 3 lớp: 1, Lớp vải chính – 2, một lớp lọc bụi cao cấp – 3, một lớp than hoạt tính – 4,
-                                    lớp vải thấm mồ hôi tạo sự thoải mái khi sử dụng sản phẩm.</p>
+                                <h2><a href="#">{{$product->name}}</a></h2>
+                                <p>{{$product->detail}}</p>
                                 <ul class="list-inline posted-info">
                                     <li>Chi tiết xin liện hệ</li>
                                     <li>Nguyễn Văn A</li>
                                     <li>SDT: 0123456789</li>
                                 </ul>
+
                                 <ul class="post-shares">
                                     <li>
-                                        <a href="#">
-                                            <i class="rounded-x icon-speech"></i>
-                                            <span>5</span>
-                                        </a>
+                                        <a href="#"> <i class="rounded-x icon-speech"></i> <span>5</span> </a>
                                     </li>
                                     <li><a href="#"><i class="rounded-x icon-share"></i></a></li>
                                     <li><a href="#"><i class="rounded-x icon-heart"></i></a></li>
@@ -104,14 +99,16 @@
                     <div class="clearfix margin-bottom-20">
                         <hr>
                     </div>
-            @endfor
-                <!-- Pager v3 -->
-                <ul class="pager pager-v3 pager-sm no-margin-bottom">
-                    <li class="previous"><a href="#">&larr; Older</a></li>
-                    <li class="page-amount">1 of 7</li>
-                    <li class="next"><a href="#">Newer &rarr;</a></li>
-                </ul>
-                <!-- End Pager v3 -->
+                @empty
+                    <div class="row margin-bottom-20">
+                        <span>Không có sản phẩm nào!</span>
+                    </div>
+                @endforelse
+
+                @if($listing->lastPage() >1)
+                    {!! $listing->links('pagination.pagination-listing') !!}
+                @endif
+
             </div>
             <!-- End Blog All Posts -->
 

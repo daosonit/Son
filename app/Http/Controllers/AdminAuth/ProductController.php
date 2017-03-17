@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\AdminAuth;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminAuth\ProductRequest;
+use  App\Http\Requests\AdminAuth\ProductUpdateRequest;
+use Request, Route;
 
 class ProductController extends Controller
 {
@@ -37,7 +38,7 @@ class ProductController extends Controller
             if (isset($data['promotion'])) {
                 $data['promotion'] = (int)$data['promotion'];
             }
-            
+
             $result = Product::create($data);
 
             if ($result) {
@@ -51,12 +52,29 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-        return view('admin.product.update');
+        try {
+            $product = Product::findOrFail($id);
+            return view('admin.product.update')->with(array('product' => $product));
+        } catch (ModelNotFoundException $e) {
+            abort(404);
+        }
     }
 
-    public function update()
+    public function update(ProductUpdateRequest $request, $id)
     {
+        try {
+            $post = Product::findOrFail($id);
+            $data = $request->all();
+            $result = $post->update($data);
 
+            if ($result) {
+                return back()->with('status', 'Cập nhật thông tin thành công.');
+            } else {
+                return back()->with('status', 'Cập nhật thông tin thất bại.');
+            }
+        } catch (ModelNotFoundException $e) {
+            abort(404);
+        }
     }
 
     public function destroy($id)

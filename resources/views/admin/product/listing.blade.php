@@ -58,10 +58,10 @@
                                     </a>
                                 </td>
                                 <td style="text-align: center;">
-                                    <a data-toggle="modal" href="#post_{{$values->id}}">
+                                    <a data-toggle="modal" href="#product_{{$values->id}}">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                     </a>
-                                    @include('admin.layout.modal',array('href'=>'post_'.$values->id,'url'=>route('admin.product.destroy',$values->id)))
+                                    @include('admin.layout.modal',array('href'=>'product_'.$values->id,'url'=>route('admin.product.destroy',$values->id)))
                                 </td>
                             </tr>
                         @empty

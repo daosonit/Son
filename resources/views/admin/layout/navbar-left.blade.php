@@ -1,3 +1,6 @@
+<?php
+
+?>
 <aside class="main-sidebar">
 
     <section class="sidebar">
@@ -14,11 +17,10 @@
 
         <ul class="sidebar-menu">
             @forelse(Navigate::getNavAdmin() as $key => $menu)
-
-                <li class="treeview">
+                <li class="treeview <?=(get_as_route($menu->action_route)) ? 'active' : '' ?>">
                     <a href="#">
                         <i class="fa fa-circle-o text-aqua"></i>
-                        <span>{{$menu->name}}</span>
+                        <strong>{{$menu->name}}</strong>
                         <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
                     </a>
 
@@ -27,7 +29,7 @@
                             @if(Route::has($menu_item->route))
                                 <li>
                                     <a href="{{route($menu_item->route)}}">
-                                        <i class="fa fa-circle-o"></i> {{$menu_item->name}}
+                                        <i class="fa fa-circle-o"></i> <span>{{$menu_item->name}}</span>
                                     </a>
                                 </li>
                             @endif
