@@ -106,7 +106,7 @@
                 @endforelse
 
                 @if($listing->lastPage() >1)
-                    {!! $listing->links('pagination.pagination-listing') !!}
+                    {!! $listing->links('pagination.pagination-product') !!}
                 @endif
 
             </div>
