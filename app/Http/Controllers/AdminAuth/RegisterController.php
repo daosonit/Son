@@ -12,7 +12,7 @@ class RegisterController extends Controller
 {
     use RegistersUsers;
 
-    protected $redirectTo = '/admin/home';
+    protected $redirectTo = '/admin';
 
     public function __construct()
     {
@@ -35,10 +35,14 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),]);
     }
 
+
+
+
     public function showRegistrationForm()
     {
         return view('admin.user.insert');
     }
+
 
     public function getListAdmin()
     {

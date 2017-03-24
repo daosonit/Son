@@ -17,9 +17,10 @@
 
             <div class="box box-default">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Nhà cung cấp</h3>
+                    <h3 class="box-title">Thêm user mới</h3>
                 </div>
                 <div class="box-body">
+
                     @if (session('status'))
                         <div class="alert flash-message text-center alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -29,19 +30,40 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            {!! Form::open(['route' => 'admin.menu.store']) !!}
+                            {!! Form::open(['route' => 'admin.post_login']) !!}
+
                             <div class="form-group">
-                                {!! Form::label('name', 'Name') !!}
-                                {!! Form::text('name','',array('class'=>'form-control','placeholder' => 'Tên navigate')) !!}
+                                {!! Form::label('name', 'Tên người dùng') !!}
+                                {!! Form::text('name','',array('class'=>'form-control','placeholder' => 'Vui lòng nhập tên người dùng!')) !!}
                                 @if ($errors->has('name'))
                                     <div class="text-danger">{!! $errors->first('name') !!}</div>
                                 @endif
+                            </div>
 
-                            </div>
                             <div class="form-group">
-                                {!! Form::label('type', 'Navigate') !!}
-                                {!! Form::select('type', Navigate::getNavigate(),null, array('class'=>'form-control')) !!}
+                                {!! Form::label('email', 'Email') !!}
+                                {!! Form::email('email', '', array('class'=>'form-control','placeholder' => 'Vui lòng nhập Email!')) !!}
+                                @if ($errors->has('email'))
+                                    <div class="text-danger">{!! $errors->first('email') !!}</div>
+                                @endif
                             </div>
+
+                            <div class="form-group">
+                                {!! Form::label('password', 'Mật khẩu') !!}
+                                {!! Form::password('password',array('class'=>'form-control','placeholder' => 'Vui lòng nhập mật khẩu!')) !!}
+                                @if ($errors->has('password'))
+                                    <div class="text-danger">{!! $errors->first('password') !!}</div>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
+                                {!! Form::label('password_confirmation', 'Nhắc lại mật khẩu') !!}
+                                {!! Form::password('password_confirmation',array('class'=>'form-control','placeholder' => 'Vui lòng nhắc lại mâtj khẩu!')) !!}
+                                @if ($errors->has('password_confirmation'))
+                                    <div class="text-danger">{!! $errors->first('password_confirmation') !!}</div>
+                                @endif
+                            </div>
+
                             <div class="form-group">
                                 {!! Form::submit('Thêm',array('class'=>'btn btn-primary')) !!}
                             </div>

@@ -60,23 +60,12 @@
 
                         <div class="blog-post-tags">
                             <ul class="list-unstyled list-inline blog-info">
-                                <li><i class="fa fa-calendar"></i> February 02, 2013</li>
-                                <li><i class="fa fa-pencil"></i> Diana Anderson</li>
-                                <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
-                            </ul>
-                            <ul class="list-unstyled list-inline blog-tags">
-                                <li>
-                                    <i class="fa fa-tags"></i>
-                                    <a href="#">Technology</a>
-                                    <a href="#">Education</a>
-                                    <a href="#">Internet</a>
-                                    <a href="#">Media</a>
-                                </li>
+                                <li><i class="fa fa-calendar"></i>Ngày đăng: {{$post->created_at}}</li>
                             </ul>
                         </div>
 
                         <div class="blog-img">
-                            <img class="img-responsive" src="assets/img/main/img18.jpg" alt="">
+                            <img class="img-responsive" src="{{asset('website/img/main/img18.jpg')}}" alt="">
                         </div>
                         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
                             voluptatum
@@ -92,7 +81,7 @@
                             lacus.
                             Fusce condimentum eleifend enim a feugiat.</p>
                         <p>
-                            <a class="btn-u btn-u-small" href="#"> <i class="fa fa-plus-sign"></i> Read More</a>
+                            <a class="btn-u btn-u-small" href="{{route('site.detail-post',array('id'=>$post->id,'name'=>str_slug($post->name)))}}"> <i class="fa fa-plus-sign"></i>Xem thêm</a>
                         </p>
                     </div>
                     <!--End Blog Post-->

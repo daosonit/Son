@@ -45,88 +45,82 @@
     <div class="purchase">
         <div class="container">
             <div class="row">
-                <div class="col-md-9 animated fadeInLeft">
-                    <span>trường hợp các địa danh ít người biết đến đã trở thành điểm du lịch ăn
-                        khách chỉ sau một bộ phim</span>
-                    <p>Sau khi bom tấn Kong: Skull Island của đạo diễn Jordan Vogt-Roberts ra rạp tại Việt Nam từ ngày
-                        9/3, hàng loạt hãng lữ hành trong và ngoài nước bắt đầu mở tour mới đón khách quốc tế đến tham
-                        quan các địa điểm là bối cảnh trong phim như: Quảng Bình, Ninh Bình, Hạ Long...
-                        Với việc Kong: Skull Island được công chiếu trên thế giới với đa phần bối cảnh là tại Việt Nam
-                        dự đoán sẽ tạo cú hích mới về du lịch tại địa điểm được chọn làm bối cảnh phim. Điều này là có
-                        cơ sở vì đã có nhiều trường hợp các địa danh ít người biết đến đã trở thành điểm du lịch ăn
-                        khách chỉ sau một bộ phim.</p>
-                </div>
-                <div class="col-md-3 btn-buy animated fadeInRight">
-                    <a href="#" class="btn-u btn-u-lg"><i class="fa fa-cloud-download"></i> Download Now</a>
+                <div class="col-md-12 animated fadeInLeft">
+                    <span> CÔNG TY TNHH MAY MẶC QUYỀN ANH</span>
+                    <p>
+                        - Bằng quá trình hoạt động công ty luôn tự hào là đơn vị hàng đầu Việt Nam chuyên sản xuất, phân phối khẩu trang y tế cho thị trường trong và ngoài nước.<br/>
+
+                        - Với công nghệ nhập khẩu từ Nhật Bản công ty đã được Trung tâm kỹ thuật tiêu chuẩn đo lường chất lượng 1 cấp chứng nhận tiêu chuẩn về sản phẩm.<br/>
+
+                        - Với phương châm tối đa hóa lợi ích cho khách hàng công ty luôn luôn nỗ lực phấn đấu mang đến những sản phẩm, dịch vụ có giá trị hoàn hảo nhất cho khách hàng và khẳng định được thương hiệu khẩu trang y tế Quyền Anh trên thị trường.<br/>
+
+                        - Bằng chất lượng được khẳng định bởi niềm tin và sự hài lòng của khách hàng, chúng tôi đang và sẽ tiếp tục cải tiến để có thể đem đến nhiều sản phẩm tốt hơn nữa phục vụ mọi người Việt Nam.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container content-sm">
+
+
+        <div class="row margin-bottom-30">
+            <div class="col-md-4">
+                <div class="service">
+                    <i class="fa fa-compress service-icon"></i>
+                    <div class="desc">
+                        <h4>Mẫu mã đa dạng</h4>
+                        <p> Cung cấp nhiều hình dáng và mẫu mã các loại khẩu trang </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service">
+                    <i class="fa fa-cogs service-icon"></i>
+                    <div class="desc">
+                        <h4>Cam kết chất lượng</h4>
+                        <p>Sản phẩm khẩu trang kháng khuẩn đạt tiêu chuẩn </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service">
+                    <i class="fa fa-rocket service-icon"></i>
+                    <div class="desc">
+                        <h4>Vận chuyển toàn quốc</h4>
+                        <p>Nhận đơn hàng và ship hàng toàn quốc</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Recent Works -->
         <div class="headline"><h2>Sản phẩm bán chạy</h2></div>
+
         <div class="row margin-bottom-20">
-            <div class="col-md-3 col-sm-6">
-                <div class="thumbnails thumbnail-style thumbnail-kenburn">
-                    <div class="thumbnail-img">
-                        <div class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img1.jpg" alt="">
+            <?php
+            $promo_product = \App\Models\Product::select('id', 'name', 'description')->where('promotion', '=', '1')->orderBy('id', 'DESC')->limit(4)->get()
+            ?>
+            @foreach($promo_product as $key => $promo)
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                        <div class="thumbnail-img">
+                            <div class="overflow-hidden">
+                                <img class="img-responsive" src="{{asset('/website/img/main/img1.jpg')}}" alt="">
+                            </div>
+                            <a class="btn-more hover-effect"
+                               href="{{route('site.detail-product',array('id'=>$promo->id,'name'=>str_slug($promo->name)))}}">Xem
+                                chi tiết</a>
                         </div>
-                        <a class="btn-more hover-effect" href="#">read more +</a>
-                    </div>
-                    <div class="caption">
-                        <h3><a class="hover-effect" href="#">Project One</a></h3>
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam
-                            porta sem.</p>
+                        <div class="caption">
+                            <h3><a class="hover-effect"
+                                   href="{{route('site.detail-product',array('id'=>$promo->id,'name'=>str_slug($promo->name)))}}">{{$promo->name}}</a>
+                            </h3>
+                            <p>{{$promo->description}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="thumbnails thumbnail-style thumbnail-kenburn">
-                    <div class="thumbnail-img">
-                        <div class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img12.jpg" alt="">
-                        </div>
-                        <a class="btn-more hover-effect" href="#">read more +</a>
-                    </div>
-                    <div class="caption">
-                        <h3><a class="hover-effect" href="#">Project Two</a></h3>
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam
-                            porta sem.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="thumbnails thumbnail-style thumbnail-kenburn">
-                    <div class="thumbnail-img">
-                        <div class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img3.jpg" alt="">
-                        </div>
-                        <a class="btn-more hover-effect" href="#">read more +</a>
-                    </div>
-                    <div class="caption">
-                        <h3><a class="hover-effect" href="#">Project Three</a></h3>
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam
-                            porta sem.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="thumbnails thumbnail-style thumbnail-kenburn">
-                    <div class="thumbnail-img">
-                        <div class="overflow-hidden">
-                            <img class="img-responsive" src="website/img/main/img17.jpg" alt="">
-                        </div>
-                        <a class="btn-more hover-effect" href="#">read more +</a>
-                    </div>
-                    <div class="caption">
-                        <h3><a class="hover-effect" href="#">Project Four</a></h3>
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam
-                            porta sem.</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
 
         @include('website.layout.owl-clients')

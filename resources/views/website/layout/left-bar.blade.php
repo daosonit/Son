@@ -9,8 +9,8 @@
         @foreach($posts as $key => $post)
             <li>
                 <h3><a href="{{route('site.detail-post',array('id'=>$post->id,'name'=>str_slug($post->name)))}}">{{$post->name}}</a></h3>
-                <small>Ngày tạo: {{$post->created_at}}</small>
-                <p>{{$post->	description}}</p>
+                <small>Ngày đăng: {{$post->created_at}}</small>
+                <p>{{$post->description}}</p>
             </li>
         @endforeach
     </ul>

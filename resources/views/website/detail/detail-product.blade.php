@@ -65,21 +65,21 @@
                         <div class="item active">
                             <img alt="" src="{{asset('website/img/main/img11.jpg')}}">
                             <div class="carousel-caption">
-                                <p>Facilisis odio, dapibus ac justo acilisis gestinas.</p>
+                                <p>Giới thiệu thông tin ảnh sản phẩm</p>
                             </div>
                         </div>
 
                         <div class="item">
                             <img alt="" src="{{asset('website/img/main/img11.jpg')}}">
                             <div class="carousel-caption">
-                                <p>Cras justo odio, dapibus ac facilisis into egestas.</p>
+                                <p>Giới thiệu thông tin ảnh sản phẩm</p>
                             </div>
                         </div>
 
                         <div class="item">
                             <img alt="" src="{{asset('website/img/main/img11.jpg')}}">
                             <div class="carousel-caption">
-                                <p>Justo cras odio apibus ac afilisis lingestas de.</p>
+                                <p>Giới thiệu thông tin ảnh sản phẩm.</p>
                             </div>
                         </div>
                     </div>
@@ -102,11 +102,11 @@
                 </p>
 
                 <ul class="list-unstyled">
-                    <li><i class="fa fa-user color-green"></i> Jack Baur</li>
-                    <li><i class="fa fa-calendar color-green"></i> 14,2003 February</li>
-                    <li><i class="fa fa-tags color-green"></i> Websites, Google, HTML5/CSS3</li>
+                    <li><i class="fa fa-user color-green"></i> Ms.Loan: 0943.988.789</li>
+                    <li><i class="fa fa-user color-green"></i> Ms.Loan: 0943.988.789</li>
+                    <li><i class="fa fa-user color-green"></i> Ms.Loan: 0943.988.789</li>
                 </ul>
-                <a href="#" class="btn-u btn-u-large">VISIT THE PROJECT</a>
+                <a href="#" class="btn-u btn-u-large">Liên hệ</a>
             </div>
 
         </div><!--/row-->
@@ -130,19 +130,22 @@
             </div>
 
             <div class="owl-recent-works-v1">
-                @for($i =0; $i<10; $i++)
-                <div class="item">
-                    <a href="#">
-                        <em class="overflow-hidden">
-                            <img class="img-responsive" src="{{asset('website/img/main/img1.jpg')}}" alt="">
-                        </em>
-                        <span>
-                            <strong>Happy New Year</strong>
-                            <i>Anim pariatur cliche reprehenderit</i>
+                <?php
+                $products = \App\Models\Product::select('id', 'name','description')->where('selling', '=', '1')->orderBy('id', 'DESC')->get()
+                ?>
+                @foreach($products as $key => $product)
+                    <div class="item">
+                        <a href="{{route('site.detail-product',array('id'=>$product->id,'name'=>str_slug($product->name)))}}">
+                            <em class="overflow-hidden">
+                                <img class="img-responsive" src="{{asset('website/img/main/img1.jpg')}}" alt="">
+                            </em>
+                            <span>
+                            <strong>{{$product->name}}</strong>
+                            <i>{{$product->description}}</i>
                         </span>
-                    </a>
-                </div>
-                @endfor
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
 

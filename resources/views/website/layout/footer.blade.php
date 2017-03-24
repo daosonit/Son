@@ -3,9 +3,10 @@
         <div class="container">
             <div class="row">
                 <!-- About -->
-                <div class="col-md-3 md-margin-bottom-40">
+                <div class="col-md-4 md-margin-bottom-40">
                     <a href="index.html">
-                        <img id="logo-footer" class="footer-logo" src="{{asset('website/img/logo1-default.png')}}" alt="">
+                        <img id="logo-footer" class="footer-logo" src="{{asset('website/img/logo1-default.png')}}"
+                             alt="">
                     </a>
                     <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero
                         tincidunt sodales.</p>
@@ -13,32 +14,9 @@
                         non arcu.</p>
                 </div>
                 <!--/col-md-3-->
-                <!-- End About -->
-
-                <!-- Latest -->
-                <div class="col-md-3 md-margin-bottom-40">
-                    <div class="posts">
-                        <div class="headline"><h2>Latest Posts</h2></div>
-                        <ul class="list-unstyled latest-list">
-                            <li>
-                                <a href="#">Incredible content</a>
-                                <small>May 8, 2014</small>
-                            </li>
-                            <li>
-                                <a href="#">Best shoots</a>
-                                <small>June 23, 2014</small>
-                            </li>
-                            <li>
-                                <a href="#">New Terms and Conditions</a>
-                                <small>September 15, 2014</small>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!--/col-md-3-->
-                <!-- End Latest -->
 
                 <!-- Link List -->
-                <div class="col-md-3 md-margin-bottom-40">
+                <div class="col-md-4 md-margin-bottom-40">
                     <div class="headline"><h2>Useful Links</h2></div>
                     <ul class="list-unstyled link-list">
                         <li><a href="#">About us</a><i class="fa fa-angle-right"></i></li>
@@ -48,17 +26,14 @@
                         <li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
                     </ul>
                 </div><!--/col-md-3-->
-                <!-- End Link List -->
 
-                <!-- Address -->
-                <div class="col-md-3 map-img md-margin-bottom-40">
-                    <div class="headline"><h2>Contact Us</h2></div>
+                <div class="col-md-4 map-img md-margin-bottom-40">
+                    <div class="headline"><h2>Liên hệ</h2></div>
                     <address class="md-margin-bottom-40">
-                        25, Lorem Lis Street, Orange <br/>
-                        California, US <br/>
-                        Phone: 800 123 3456 <br/>
-                        Fax: 800 123 3456 <br/>
-                        Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
+                        Xuân lai - Xuân lai <br/>
+                        Gia Bình - Bắc Ninh <br/>
+                        Ms.Loan: 0943.988.789 <br/>
+                        Email: <a href="mailto:khautrangquyenanh@gmail.com" class="">khautrangquyenanh@gmail.com</a>
                     </address>
                 </div><!--/col-md-3-->
                 <!-- End Address -->

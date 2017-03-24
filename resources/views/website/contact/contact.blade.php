@@ -11,7 +11,6 @@
             src="{{asset('/website/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js')}}"></script>
     <script type="text/javascript"
             src="{{asset('/website/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('/website/js/custom.js')}}"></script>
     <!-- JS Page Level -->
     <script type="text/javascript" src="{{asset('/website/js/app.js')}}"></script>
     <script type="text/javascript" src="{{asset('/website/js/forms/login.js')}}"></script>
@@ -75,18 +74,21 @@
     <div class="container content">
         <div class="row margin-bottom-30">
             <div class="col-md-9 mb-margin-bottom-30">
-                <div id="map" class="map map-box map-box-space margin-bottom-40"></div>
+                <div class="map map-box map-box-space margin-bottom-40">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5264.972512654846!2d106.19529384992498!3d21.076745049085822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135757a1f4e0149%3A0x81ac9d6c99784e5c!2zWHXDom4gTGFpLCBHaWEgQsOsbmgsIELhuq9jIE5pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1489889549068" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
 
                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
                     deleniti
                     atque corrupti quos dolores et quas feugiat. Et harum quidem rerum facilis est et expedita
                     distinctio
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit landitiis.</p><br/>
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit landitiis.</p>
+                <br/>
 
                 <form action="" method="post" id="sky-form3"
                       class="sky-form contact-style">
                     <fieldset class="no-padding">
-                        <label>Name <span class="color-red">*</span></label>
+                        <label>Họ tên <span class="color-red">*</span></label>
                         <div class="row sky-space-20">
                             <div class="col-md-7 col-md-offset-0">
                                 <div>
@@ -104,7 +106,7 @@
                             </div>
                         </div>
 
-                        <label>Message <span class="color-red">*</span></label>
+                        <label>Lời nhắn <span class="color-red">*</span></label>
                         <div class="row sky-space-20">
                             <div class="col-md-11 col-md-offset-0">
                                 <div>
@@ -114,7 +116,7 @@
                         </div>
 
                         <p>
-                            <button type="submit" class="btn-u">Send Message</button>
+                            <button type="submit" class="btn-u">Gửi lời nhắn</button>
                         </p>
                     </fieldset>
 
